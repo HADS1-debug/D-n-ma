@@ -1,0 +1,50 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24230 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] ------------------< vn.ptit.edu:hospital_management >-------------------
+[INFO] Building hospital_management 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.1.2:run (default-cli) > test-compile @ hospital_management >>>
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ hospital_management ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ hospital_management ---
+[WARNING] Could not transfer metadata /.meta/prefixes.txt from/to apache.snapshots (https://repository.apache.org/snapshots): Connect to repository.apache.org:443 [repository.apache.org/37.27.138.133] failed: Connect timed out
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 3 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ hospital_management ---
+[INFO] skip non existing resourceDirectory /home/phamhuy/hospital_management/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ hospital_management ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] <<< spring-boot:4.1.2:run (default-cli) < test-compile @ hospital_management <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.1.2:run (default-cli) @ hospital_management ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-10-24T20:55:52.299Z  INFO 13998 --- [hospital_management] [           main] v.p.e.h.HospitalManagementApplication    : Starting HospitalManagementApplication using Java 21.0.12.1 with PID 13998 (/home/phamhuy/hospital_management/target/classes started by phamhuy in /home/phamhuy/hospital_management)
+2026-10-24T20:55:52.303Z  INFO 13998 --- [hospital_management] [           main] v.p.e.h.HospitalManagementApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-10-24T20:55:53.189Z  INFO 13998 --- [hospital_management] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-24T20:55:53.208Z  INFO 13998 --- [hospital_management] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T20:55:53.208Z  INFO 13998 --- [hospital_management] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-24T20:55:53.263Z  INFO 13998 --- [hospital_management] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 895 ms
+2026-10-24T20:55:53.633Z  INFO 13998 --- [hospital_management] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-24T20:55:53.638Z  INFO 13998 --- [hospital_management] [           main] v.p.e.h.HospitalManagementApplication    : Started HospitalManagementApplication in 1.907 seconds (process running for 2.349)

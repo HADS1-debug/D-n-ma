@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">Bách
+	Khoa Aptech</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<style>
+.slideshow {
+	width: 100%;
+	height: 120px;
+	background: red;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<div class="container mt-3">
+		<div th:replace="~{fragments/fragment::header}">
+			<h2>Phần menu</h2>
+		</div>
+		<hr />
+		<div th:replace="~{fragments/fragment::slideshow}">
+			<h2>Phần Album ảnh</h2>
+		</div>
+		<hr />
+		<div layout:fragment="content">
+            Nội dung người dùng chọn index/about/contact/search/product
+        </div>
+		<hr />
+		<div th:replace="~{fragments/home_fragments::footer}">
+			<h2>Phần chân trang</h2>
+		</div>
+	</div>
+</body>
+</html>

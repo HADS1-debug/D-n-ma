@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} + ' - HNA Shop'">Sản phẩm - HNA Shop</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f6f9;
+        }
+        .form-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 460px;
+        }
+        .form-card h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #666;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+        }
+        .form-group input:focus {
+            border-color: #007bff;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-save   { background-color: #007bff; color: white; }
+        .btn-save:hover { background-color: #0056b3; }
+        .btn-cancel { background-color: #e9ecef; color: #495057; }
+    </style>
+</head>
+<body>
+ 
+    <div class="form-card">
+        <h2 th:text="${title}">Thêm sản phẩm</h2>
+ 
+        <form th:action="@{/products/save}" th:object="${product}" method="post">
+            <!-- id ẩn: có giá trị khi sửa, rỗng khi thêm mới -->
+            <input type="hidden" th:field="*{id}">
+ 
+            <div class="form-group">
+                <label for="name">Tên sản phẩm</label>
+                <input type="text" id="name" th:field="*{name}" placeholder="Nhập tên sản phẩm..." required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="price">Giá bán (VNĐ)</label>
+                <input type="number" id="price" th:field="*{price}" min="0" placeholder="Nhập giá tiền sản phẩm..." required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="quantity">Số lượng tồn kho</label>
+                <input type="number" id="quantity" th:field="*{quantity}" min="0" placeholder="Nhập số lượng sản phầm tồn kho..." required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="image_url">Đường dẫn ảnh (URL)</label>
+                <input type="text" id="image_url" th:field="*{image_url}" placeholder="https://...">
+            </div>
+ 
+            <div class="form-group">
+                <label for="category_id">Mã danh mục</label>
+                <input type="number" id="category_id" th:field="*{category_id}" placeholder="Nhập mã danh mục sản phẩm..."min="1">
+            </div>
+ 
+            <div class="buttons">
+                <a class="btn btn-cancel" th:href="@{/home}">Hủy</a>
+                <button type="submit" class="btn btn-save">Lưu</button>
+            </div>
+
+            <script th:if="${popupError != null}" th:inline="javascript">
+                alert([[${popupError}]]);
+            </script>
+        </form>
+    </div>
+</body>
+</html>
